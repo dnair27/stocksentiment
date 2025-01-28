@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Sentiment Result</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            font-family: Bitter;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Sentiment Analysis Result</h1>
+    <p>Stock Symbol: {{ stock_symbol }}</p>
+    <p>Sentiment Score: {{ sentiment_score }}</p>
+    <p>Sentiment: {{ sentiment }}</p>
+    <p>Recommendation: {{ recommendation }}</p>
+</body>
+</html>
