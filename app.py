@@ -1,4 +1,11 @@
 import requests
+
+# Example of a GET request using requests library
+response = requests.get('https://api.github.com/users/dnair27')
+
+# Print the response content
+print(response.json())
+
 from flask import Flask, render_template, request
 from textblob import TextBlob
 
@@ -416,11 +423,7 @@ def index():
                              (macro_score * 0.2)
         sentiment_score = round(combined_sentiment, 2)
         # Return the sentiment score and analysis details
-        return render_template('result.html', 
+        return render_template('result.html',
             stock_symbol=stock_symbol,
-            sentiment_score=sentiment_score,
-            gdp_growth=round(gdp_growth * 100, 2),
-            inflation=round(inflation * 100, 2), 
-            unemployment=round(unemployment, 2),
-            macro_score=round(macro_score, 2)
+            sentiment_score=sentiment_score
         )
