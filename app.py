@@ -415,17 +415,12 @@ def index():
                              (fundamental_score * 0.2) + (technical_score * 0.2) + \
                              (macro_score * 0.2)
         sentiment_score = round(combined_sentiment, 2)
-        # Return the results in a format suitable for the template
-        return render_template('result.html',
+        # Return the sentiment score and analysis details
+        return render_template('result.html', 
             stock_symbol=stock_symbol,
             sentiment_score=sentiment_score,
             gdp_growth=round(gdp_growth * 100, 2),
-            inflation=round(inflation * 100, 2),
+            inflation=round(inflation * 100, 2), 
             unemployment=round(unemployment, 2),
-            macro_score=round(macro_score, 2),
-            news_sentiment=round(news_sentiment, 2),
-            twitter_sentiment=round(twitter_sentiment, 2),
-            fundamental_score=round(fundamental_score, 2),
-            technical_score=round(technical_score, 2),
-            recommendation=get_recommendation(sentiment_score)
+            macro_score=round(macro_score, 2)
         )
